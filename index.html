@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        /* Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -17,18 +18,19 @@
             color: #333;
             background-color: #f8f9fa;
             padding: 20px;
-            max-width: 800px;
-            margin: 0 auto;
         }
         
+        /* Container for content */
         .policy-container {
+            max-width: 800px;
+            margin: 0 auto;
             background: white;
             border-radius: 12px;
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
             padding: 40px;
-            margin-top: 20px;
         }
         
+        /* Typography */
         h1 {
             color: #2E5BFF;
             font-size: 28px;
@@ -55,21 +57,38 @@
         p {
             margin-bottom: 15px;
             font-size: 16px;
+            line-height: 1.7;
         }
         
         strong {
             color: #00C853;
         }
         
-        ul {
-            margin: 15px 0 15px 25px;
+        ul, ol {
+            margin: 15px 0 15px 40px; /* Increased left margin for bullets */
         }
         
         li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-size: 16px;
+            line-height: 1.6;
         }
         
+        /* Links */
+        a {
+            color: #2E5BFF;
+            text-decoration: none;
+            border-bottom: 1px dotted #2E5BFF;
+            padding-bottom: 1px;
+            transition: all 0.2s ease;
+        }
+        
+        a:hover {
+            color: #00C853;
+            border-bottom: 1px solid #00C853;
+        }
+        
+        /* Special Sections */
         .contact-box {
             background: #f0f7ff;
             border-left: 4px solid #2E5BFF;
@@ -87,9 +106,10 @@
             text-align: center;
         }
         
-        @media (max-width: 600px) {
+        /* Responsive Design */
+        @media (max-width: 768px) {
             body {
-                padding: 10px;
+                padding: 15px;
             }
             
             .policy-container {
@@ -98,6 +118,40 @@
             
             h1 {
                 font-size: 24px;
+            }
+            
+            h2 {
+                font-size: 18px;
+            }
+            
+            ul, ol {
+                margin-left: 25px; /* Smaller margin on mobile */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .policy-container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 22px;
+            }
+            
+            h2 {
+                font-size: 17px;
+            }
+            
+            p, li {
+                font-size: 15px;
+            }
+            
+            ul, ol {
+                margin-left: 20px;
             }
         }
     </style>
@@ -110,12 +164,16 @@
         <p>Thank you for choosing Money Eye. This Privacy Policy explains how we handle your information when you use our application.</p>
         
         <h2>1. Information We Collect</h2>
-        <p><strong>1.1 Personal Financial Data:</strong> All your expense records, categories, budgets, and savings goals are stored <strong>exclusively on your device</strong> and are never transmitted to our servers.</p>
         
-        <p><strong>1.2 Automatically Collected Information:</strong></p>
+        <p><strong>1.1 Data You Provide:</strong> All your expense records, categories, budgets, and savings goals are stored <strong>exclusively on your device</strong> and are never transmitted to our servers.</p>
+        
+        <p><strong>1.2 Data Collected for Advertising:</strong> When you use the free version of Money Eye with advertisements, our advertising partner Google AdMob collects:</p>
         <ul>
-            <li><strong>Usage Data:</strong> Anonymous app interaction data may be collected through Google Play Console for crash reporting and performance monitoring only</li>
-            <li><strong>Device Information:</strong> Device type, Android version, and language settings for compatibility purposes</li>
+            <li><strong>Device Information:</strong> Device model, operating system version, unique device identifiers (Advertising ID)</li>
+            <li><strong>Location Data:</strong> Approximate location (country, city based on IP address)</li>
+            <li><strong>Usage Data:</strong> How you interact with advertisements, ad views and clicks</li>
+            <li><strong>Technical Data:</strong> IP address, network connection type, crash logs</li>
+            <li><strong>Advertising ID:</strong> Google Advertising ID for ad personalization</li>
         </ul>
         
         <p><strong>1.3 Third-Party API Data:</strong></p>
@@ -124,40 +182,84 @@
             <li>No personal identifiers are included in these requests</li>
         </ul>
         
-        <h2>2. Data Storage and Security</h2>
-        <p>All your financial data is stored locally on your device using SQLite database. We do not operate any servers that store your personal financial information.</p>
+        <h2>2. How We Use Your Information</h2>
         
-        <h2>3. Permissions</h2>
+        <p><strong>2.1 For App Functionality:</strong> Store and manage your expense data locally, maintain your preferences and settings, provide currency conversion features.</p>
+        
+        <p><strong>2.2 For Advertising:</strong> Display relevant advertisements via Google AdMob, measure advertising performance, analytics to improve app experience.</p>
+        
+        <p><strong>2.3 Legal Basis (GDPR):</strong></p>
         <ul>
-            <li><strong>Internet Access:</strong> Used solely for fetching currency exchange rates from public APIs</li>
-            <li><strong>Storage Access:</strong> Used only for backup creation and data export features initiated by you</li>
+            <li><strong>Contractual necessity:</strong> Providing expense tracking services</li>
+            <li><strong>Legitimate interests:</strong> Advertising to support free app development</li>
+            <li><strong>Consent:</strong> For personalized advertising (you can opt-out)</li>
         </ul>
         
-        <h2>4. Third-Party Services</h2>
-        <p><strong>Exchange Rate APIs:</strong> We use public currency conversion services. These services may collect standard log data (IP address, request timestamp) as per their own privacy policies.</p>
+        <h2>3. Data Storage and Security</h2>
+        
+        <p><strong>3.1 Local Storage:</strong> Your expense data remains <strong>100% on your device</strong>. Never transmitted to our servers. You control backup/export functionality.</p>
+        
+        <p><strong>3.2 Advertising Data:</strong> Processed by Google AdMob on their servers. Subject to Google's privacy practices and retention policies.</p>
+        
+        <p><strong>3.3 Data Security:</strong> Local data protected by device security. AdMob data protected by Google's security measures. We implement reasonable security practices.</p>
+        
+        <h2>4. Data Sharing and Disclosure</h2>
+        
+        <p><strong>4.1 With Service Providers:</strong></p>
+        <ul>
+            <li><strong>Google AdMob:</strong> For advertising services</li>
+            <li><strong>Currency API providers:</strong> For exchange rates (currency codes only)</li>
+        </ul>
+        
+        <p><strong>4.2 Legal Requirements:</strong> We may disclose information if required by law or to comply with legal obligations, protect our rights and property, or prevent fraud or security issues.</p>
+        
+        <p><strong>4.3 No Sale of Personal Data:</strong> We do NOT sell your personal data to third parties.</p>
+        
+        <h2>5. Your Rights and Choices</h2>
+        
+        <p><strong>5.1 Advertising Preferences:</strong> You can opt-out of personalized advertising:</p>
+        <ul>
+            <li><strong>On Android devices:</strong> Open Settings → Google → Ads → "Opt out of Ads Personalization"</li>
+            <li><strong>Or visit:</strong> <a href="https://adssettings.google.com/" target="_blank">https://adssettings.google.com/</a></li>
+        </ul>
+        
+        <p><strong>5.2 Data Access and Control:</strong></p>
+        <ul>
+            <li><strong>Export Data:</strong> Settings → Export Data (CSV/JSON)</li>
+            <li><strong>Delete Local Data:</strong> Settings → Reset All Data</li>
+            <li><strong>Backup:</strong> Create local backups on your device</li>
+        </ul>
+        
+        <p><strong>5.3 GDPR/CCPA Rights:</strong> If applicable, you have the right to access your personal data, request data portability, request data deletion, object to data processing, and lodge complaints with authorities.</p>
+        
+        <h2>6. Third-Party Services</h2>
+        
+        <p><strong>Google AdMob:</strong> Advertising platform. Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>. Opt-out: <a href="https://adssettings.google.com/" target="_blank">https://adssettings.google.com/</a></p>
+        
+        <p><strong>Exchange Rate APIs:</strong> We use public currency conversion services for exchange rates.</p>
         
         <p><strong>Google Play Services:</strong> Our app is distributed via Google Play Store, which may collect standard installation and update information.</p>
         
-        <h2>5. Your Rights</h2>
-        <ul>
-            <li><strong>Data Export:</strong> Export all data to CSV/JSON format via app functionality</li>
-            <li><strong>Data Deletion:</strong> Use "Reset All Data" feature in Settings to remove all local data</li>
-            <li><strong>Backup:</strong> Create local backups on your device storage</li>
-        </ul>
+        <h2>7. Children's Privacy</h2>
+        <p>Money Eye is not directed to children under 13. We do not knowingly collect personal information from children.</p>
         
-        <h2>6. Children's Privacy</h2>
-        <p>Our app is not directed to children under 13. We do not knowingly collect personal information from children.</p>
+        <h2>8. International Data Transfers</h2>
+        <p>Advertising data may be transferred to and processed in countries outside your residence, including the United States.</p>
         
         <div class="contact-box">
-            <h2>7. Contact Information</h2>
+            <h2>9. Contact Information</h2>
             <p>For privacy-related questions or concerns, please contact us at:</p>
             <p><strong>Email:</strong> techappdev77@gmail.com</p>
+            <p><strong>Developer:</strong> TechApp Development, Pakistan</p>
         </div>
         
-        <h2>8. Changes to This Policy</h2>
+        <h2>10. Changes to This Policy</h2>
         <p>We may update this privacy policy. The "Last Updated" date at the top will be revised accordingly. Continued use of the app after changes constitutes acceptance.</p>
         
         <div class="footer">
+            <p><strong>Additional Resources:</strong></p>
+            <p>• Google AdMob Privacy: <a href="https://support.google.com/admob/answer/6128543" target="_blank">https://support.google.com/admob/answer/6128543</a></p>
+            <p>• Google Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></p>
             <p>Money Eye is developed by TechApp Development, Pakistan.</p>
         </div>
     </div>
